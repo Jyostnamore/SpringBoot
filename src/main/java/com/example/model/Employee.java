@@ -21,13 +21,13 @@ public Date getDate() {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-public void setMobile_no(Long mobile_no) {
-		this.mobile_no = mobile_no;
+public void setMobile_no(Long mobileno) {
+		this.mobileno = mobileno;
 	}
 @Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", city=" + city + ", address=" + address  + ", mobile_no=" + mobile_no + "]";
+				+ ", city=" + city + ", address=" + address  + ", mobile_no=" + mobileno + "]";
 	}
 public String getCity() {
 		return city;
@@ -62,7 +62,7 @@ public Long getId() {
  private String address;
 @Column
 
- private Long mobile_no;
+ private Long mobileno;
 @Column
 private Date date;
 public String getFirstname() {
@@ -90,7 +90,7 @@ public void setEmail(String email) {
 
 
 
-public Employee(Long id, String firstname, String lastname, String email, String city, String address, Long mobile_no,
+public Employee(Long id, String firstname, String lastname, String email, String city, String address, Long mobileno,
 		Date date) {
 	super();
 	this.id = id;
@@ -99,7 +99,7 @@ public Employee(Long id, String firstname, String lastname, String email, String
 	this.email = email;
 	this.city = city;
 	this.address = address;
-	this.mobile_no = mobile_no;
+	this.mobileno = mobileno;
 	this.date = date;
 }
 public Employee() {
