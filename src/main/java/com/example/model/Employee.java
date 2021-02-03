@@ -21,14 +21,14 @@ public Date getDate() {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-public void setMobile_no(Long mobileno) {
+public Long getMobileno() {
+		return mobileno;
+	}
+	public void setMobileno(Long mobileno) {
 		this.mobileno = mobileno;
 	}
-@Override
-	public String toString() {
-		return "Employee [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
-				+ ", city=" + city + ", address=" + address  + ", mobile_no=" + mobileno + "]";
-	}
+
+
 public String getCity() {
 		return city;
 	}
@@ -47,8 +47,21 @@ public Long getId() {
 	}
 
 @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
  private Long id;
+	public Employee(Long id, String firstname, String lastname, String email, String city, String address, Long mobileno,
+		Date date) {
+	super();
+	this.id = id;
+	this.firstname = firstname;
+	this.lastname = lastname;
+	this.email = email;
+	this.city = city;
+	this.address = address;
+	this.mobileno = mobileno;
+	this.date = date;
+}
+
 	@Column(name="firstname")
 	
  private String firstname;
@@ -63,11 +76,14 @@ public Long getId() {
 @Column
 
  private Long mobileno;
+
+
 @Column
 private Date date;
 public String getFirstname() {
 	return firstname;
 }
+
 public void setFirstname(String firstname) {
 	this.firstname = firstname;
 }
@@ -90,21 +106,9 @@ public void setEmail(String email) {
 
 
 
-public Employee(Long id, String firstname, String lastname, String email, String city, String address, Long mobileno,
-		Date date) {
-	super();
-	this.id = id;
-	this.firstname = firstname;
-	this.lastname = lastname;
-	this.email = email;
-	this.city = city;
-	this.address = address;
-	this.mobileno = mobileno;
-	this.date = date;
-}
 public Employee() {
 	super();
-	// TODO Auto-generated constructor stub
+
 }
  
  
